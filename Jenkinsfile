@@ -21,4 +21,5 @@ node{
   stage 'Step_2'
 
   echo "Hallo, dass es ist Step2"
+  mail bcc: '', body: 'Todo bien', cc: '', from: '', replyTo: '', subject: '', to: 'eduardo.pinuga-linares@elementsystems.de'
 }
