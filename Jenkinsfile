@@ -21,4 +21,12 @@ node{
   stage 'Step_2'
 
   echo "Hallo, dass es ist Step2"
+
+  // -------------------------------
+  // ----- STAGE: 'Step_3'
+  // -------------------------------
+  stage 'Step_3'
+
+  echo "Hallo, dass es ist Step3"
+
 }
