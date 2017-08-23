@@ -24,7 +24,8 @@ node{
   sh 'git branch -av'
   sh 'git pull'
   sh 'git branch -av'
-  sh 'git checkout dev'
+  sh 'git checkout TestOK'
+  sh 'git merge master'
 
 
   // -------------------------------
