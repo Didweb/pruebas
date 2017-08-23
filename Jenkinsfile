@@ -21,7 +21,7 @@ node{
   stage 'Step_2'
 
   echo "Hallo, dass es ist Step2"
-  sh 'git checkout -b TestOK'
+  sh 'git checkout -b ${env.BRANCH_NAME}Test'
 
   sh 'git push origin ${env.BRANCH_NAME}Test'
 
