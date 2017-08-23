@@ -21,11 +21,8 @@ node{
   stage 'Step_2'
 
   echo "Hallo, dass es ist Step2"
+  sh 'git branch -av'
 
-  sh 'git checkout dev'
-  sh 'git merge master'
-  sh 'git push origin dev'
-  
 
   // -------------------------------
   // ----- STAGE: 'Step_3'
