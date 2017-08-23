@@ -22,6 +22,7 @@ node{
 
   echo "Hallo, dass es ist Step2"
   sh 'git branch -av'
+  sh 'git pull'
 
 
   // -------------------------------
