@@ -26,7 +26,8 @@ node{
   sh 'git branch -av'
   sh 'git checkout TestOK'
   sh 'git merge origin/master'
-  sh 'git push origin TestOK'
+  sh 'git push https://${GIT_USERNAME}:${GIT_PASSWORD}@pruebas.git TestOK'
+
 
 
   // -------------------------------
