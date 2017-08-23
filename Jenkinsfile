@@ -22,8 +22,9 @@ node{
 
   echo "Hallo, dass es ist Step2"
 
-
-  sh 'git push origin master'
+  sh 'git checkout dev'
+  sh 'git merge master'
+  sh 'git push origin dev'
 
   // -------------------------------
   // ----- STAGE: 'Step_3'
