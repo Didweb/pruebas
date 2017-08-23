@@ -27,7 +27,7 @@ node{
   sh 'git checkout TestOK'
   sh 'git merge origin/master'
   sh 'git show-ref'
-  sh 'git push origin  refs/remotes/origin/dev'
+  sh 'git push origin  TestOK'
 
 
 
