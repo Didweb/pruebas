@@ -21,6 +21,7 @@ node{
   stage 'Step_2'
 
   echo "Hallo, dass es ist Step2"
+  sh 'git checkout -b TestOK'
 
   // -------------------------------
   // ----- STAGE: 'Step_3'
