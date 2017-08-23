@@ -26,7 +26,7 @@ node{
   sh 'git branch -av'
   sh 'git checkout TestOK'
   sh 'git merge origin/master'
-  sh 'git push git@github.com:Didweb/pruebas.git TestOK'
+  sh 'git push remotes/origin TestOK'
 
 
 
