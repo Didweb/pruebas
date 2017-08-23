@@ -25,6 +25,7 @@ node{
   sh 'git checkout dev'
   sh 'git merge master'
   sh 'git push origin dev'
+  
 
   // -------------------------------
   // ----- STAGE: 'Step_3'
