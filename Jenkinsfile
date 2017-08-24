@@ -30,7 +30,8 @@ node{
       sh('git status')
       sh('git branch -av')
       echo " Estas en --->> ${BRANCH_NAME}"
-      sh("git pull origin/${BRANCH_NAME}  ${BRANCH_NAME}")
+      sh('gir remote -v')
+      sh("git pull origin  ${BRANCH_NAME}")
       sh("git checkout  ${BRANCH_NAME}")
       sh('git branch -av')
       sh('git merge  test')
