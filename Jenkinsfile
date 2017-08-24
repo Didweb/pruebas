@@ -16,7 +16,7 @@ node{
   // -------------------------------
   stage ('Test'){
     echo "Test"
-    git([url: 'https://github.com/Didweb/pruebas.git', branch: 'master'])
+    git([url: 'https://github.com/Didweb/pruebas.git', branch: 'test'])
 
   }
 
