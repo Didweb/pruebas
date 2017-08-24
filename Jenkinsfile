@@ -35,13 +35,20 @@ node{
   // -------------------------------
   stage ('Push_branch_Test'){
       echo "Merge To Test"
-          withCredentials([[$class: 'UsernamePasswordMultiBinding',
-          credentialsId: 'MyID',
-          usernameVariable: 'GIT_USERNAME',
-          passwordVariable: 'GIT_PASSWORD']]) {
-
-          sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@pruebas.git test')
+      withCredentials([usernamePassword(
+        credentialsId: 'git-pass-credentials-ID',
+        passwordVariable: 'GIT_PASSWORD',
+        usernameVariable: 'GIT_USERNAME')]) {
+          sh("git tag -a some_tag -m 'Jenkins'")
+          sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@<REPO> --tags')
       }
+
+      // For SSH private key authentication, try the sshagent step from the SSH Agent plugin.
+      sshagent (credentials: ['git-ssh-credentials-ID']) {
+          sh("git tag -a some_tag -m 'Jenkins'")
+          sh('git push <REPO> --tags')
+      }
+
  }
 
 }
