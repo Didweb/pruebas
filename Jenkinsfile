@@ -16,9 +16,8 @@ node{
   // -------------------------------
   stage ('Test'){
     echo "Test"
-    git url: "ssh://git@github.com:Didweb/pruebas.git",
-    credentialsId: 'Didweb',
-    branch: test
+    git([url: 'https://github.com/Didweb/pruebas.git', branch: 'master'])
+
   }
 
 
