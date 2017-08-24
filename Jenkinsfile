@@ -16,6 +16,7 @@ node{
   // -------------------------------
   stage ('Test'){
     echo "Test"
+    sh('git branch -av')
 
   }
 
