@@ -16,7 +16,7 @@ node{
   // -------------------------------
   stage ('Test'){
     echo "Test"
-    GIT_BRANCH = sh(returnStdout: true, script: 'git checkout test').trim()
+    GIT_BRANCH = sh(returnStdout: true, script: 'git checkout origin/test').trim()
     echo "Das Branch ist = ${GIT_BRANCH}"
   }
 
