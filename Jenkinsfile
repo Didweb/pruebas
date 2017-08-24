@@ -2,36 +2,30 @@
 
 node{
   // -------------------------------
-  // ----- STAGE: 'Step_1'
+  // ----- STAGE: 'Pull'
   // -------------------------------
-  stage 'Step_1'
+  stage 'Pull'
 
-  echo 'Configuration Variable'
-  def var_1 = 'Hallo'
-  def var_2 = 'Welt!'
-
-  echo "var_1 '${var_1}' + var_2 '${var_2}' = '${var_1}' '${var_2}'"
+  echo 'Machen PULL'
   sh 'rm -rf *'
   checkout scm
 
 
   // -------------------------------
-  // ----- STAGE: 'Step_2'
+  // ----- STAGE: 'Test'
   // -------------------------------
   stage 'Step_2'
 
-  echo "Hallo, dass es ist Step2"
-  sh 'git branch -av'
-  sh 'git pull'
-  sh 'git remote -v'
+  echo "Test"
+
 
 
 
   // -------------------------------
-  // ----- STAGE: 'Step_3'
+  // ----- STAGE: 'Merge to Test'
   // -------------------------------
-  stage 'Step_3'
+  stage 'Merge_To_Test'
 
-  echo "Hallo, dass es ist Step3"
+  echo "Merge To Test"
 
 }
