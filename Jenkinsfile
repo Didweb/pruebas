@@ -7,7 +7,7 @@ node{
   stage ('Pull'){
     echo 'Machen PULL'
     sh 'rm -rf *'
-    checkout scm
+    git ('git pull')
 
   }
 
@@ -16,10 +16,7 @@ node{
   // -------------------------------
   stage ('Test'){
     echo "Test"
-    sh("git pull origin  ${BRANCH_NAME}")
-    sh("git add .")
-    sh('git commit -m "Mi mesnaje"')
-    sh('git branch -av')
+
 
   }
 
@@ -28,12 +25,8 @@ node{
   // ----- STAGE: 'Merge to Test'
   // -------------------------------
   stage ('Merge_To_Test'){
-      echo "Merge To Test"
-      sh('git status')
-      sh('git branch -av')
-      sh("git checkout  ${BRANCH_NAME}")
-      sh('git branch -av')
-      sh("git merge  HEAD")
+
+
   }
 
   // -------------------------------
