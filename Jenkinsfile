@@ -8,6 +8,7 @@ node{
     echo 'Machen PULL'
     sh 'rm -rf *'
     checkout scm
+    GIT_BRANCH = sh(returnStdout: true, script: 'git rev-parse --abbrev-ref HEAD').trim()
   }
 
   // -------------------------------
@@ -15,6 +16,7 @@ node{
   // -------------------------------
   stage ('Test'){
     echo "Test"
+    echo "BRANCH ${GIT_BRANCH}"
   }
 
 
