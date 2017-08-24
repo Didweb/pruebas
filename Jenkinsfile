@@ -16,8 +16,7 @@ node{
   // -------------------------------
   stage ('Test'){
     echo "Test"
-    sh('git status')
-    sh('git merge test')
+
   }
 
 
@@ -26,7 +25,16 @@ node{
   // -------------------------------
   stage ('Merge_To_Test'){
       echo "Merge To Test"
+      sh('git status')
+      sh('git merge test')
   }
 
+  // -------------------------------
+  // ----- STAGE: 'Push'
+  // -------------------------------
+  stage ('Merge_To_Test'){
+      echo "Merge To Test"
+      sh('git push origin test')
+  }
 
 }
