@@ -18,7 +18,7 @@ node{
     echo "Test"
     sh("git pull origin  ${BRANCH_NAME}")
     sh("git add .")
-    sh('git commit -m 'Mensaje commit ' ')
+    sh('git commit -m "Mi mesnaje"')
     sh('git branch -av')
 
   }
