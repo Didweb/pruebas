@@ -29,7 +29,7 @@ node{
       sh('git status')
       sh('git branch -av')
       echo " Estas en --->> ${BRANCH_NAME}"
-      sh('git merge  test')
+      sh('git merge  origin/test')
   }
 
   // -------------------------------
