@@ -37,6 +37,7 @@ node{
   // -------------------------------
   stage ('Push_branch_Test'){
       echo "Merge To Test"
+      sh('git branch -av')
       if (BRANCH_NAME == "master") {
                   echo " rama = ${BRANCH_NAME} "
                }
