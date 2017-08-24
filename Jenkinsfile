@@ -7,7 +7,7 @@ node{
   stage ('Pull'){
     echo 'Machen PULL'
     sh 'rm -rf *'
-    git ('git pull')
+    checkout scm
 
   }
 
