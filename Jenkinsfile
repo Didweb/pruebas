@@ -16,8 +16,7 @@ node{
   // -------------------------------
   stage ('Test'){
     echo "Test"
-    sh('git branch -d f_2')
-    sh('git branch -d test')
+    sh('cat index.php')
 
   }
 
