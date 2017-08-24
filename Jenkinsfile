@@ -16,8 +16,9 @@ node{
   // -------------------------------
   stage ('Test'){
     echo "Test"
-    GIT_BRANCH = sh(returnStdout: true, script: 'git checkout origin/test').trim()
-    echo "Das Branch ist = ${GIT_BRANCH}"
+    git url: "ssh://git@github.com:Didweb/pruebas.git",
+    credentialsId: 'Didweb',
+    branch: test
   }
 
 
