@@ -28,12 +28,10 @@ node{
       echo "Merge To Test"
       sh('git status')
       sh('git branch -av')
-      echo " Estas en --->> ${BRANCH_NAME}"
       sh('git remote -v')
-      sh("git pull origin  ${BRANCH_NAME}")
-      sh("git checkout  ${BRANCH_NAME}")
+      sh("git checkout  test")
       sh('git branch -av')
-      sh('git merge  test')
+      sh("git merge  ${BRANCH_NAME}")
   }
 
   // -------------------------------
