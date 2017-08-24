@@ -28,7 +28,7 @@ node{
       echo "Merge To Test"
       sh('git status')
       sh('git branch -av')
-      sh('git remote -v')
+      sh('git merge  HEAD')
       sh("git checkout  test")
       sh('git branch -av')
       sh("git merge  ${BRANCH_NAME}")
