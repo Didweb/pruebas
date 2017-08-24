@@ -26,7 +26,8 @@ node{
   stage ('Merge_To_Test'){
       echo "Merge To Test"
       sh('git status')
-      sh('git merge test')
+      sh('git checkout  test')
+      sh('git merge  test')
   }
 
   // -------------------------------
@@ -34,7 +35,7 @@ node{
   // -------------------------------
   stage ('Push_branch_Test'){
       echo "Merge To Test"
-          withCredentials([[$class: 'UsernamePasswordMultiBinding', 
+          withCredentials([[$class: 'UsernamePasswordMultiBinding',
           credentialsId: 'MyID',
           usernameVariable: 'GIT_USERNAME',
           passwordVariable: 'GIT_PASSWORD']]) {
