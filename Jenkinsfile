@@ -30,6 +30,7 @@ node{
       sh('git branch -av')
       echo " Estas en --->> ${BRANCH_NAME}"
       sh("git checkout  ${BRANCH_NAME}")
+      sh('git branch -av')
       sh('git merge  test')
   }
 
