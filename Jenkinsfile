@@ -34,7 +34,13 @@ node{
   // -------------------------------
   stage ('Push_branch_Test'){
       echo "Merge To Test"
-      sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@pruebas.git test')
-  }
+          withCredentials([[$class: 'UsernamePasswordMultiBinding', 
+          credentialsId: 'MyID',
+          usernameVariable: 'GIT_USERNAME',
+          passwordVariable: 'GIT_PASSWORD']]) {
+
+          sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@pruebas.git test')
+      }
+ }
 
 }
