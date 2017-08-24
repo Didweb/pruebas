@@ -32,9 +32,9 @@ node{
   // -------------------------------
   // ----- STAGE: 'Push'
   // -------------------------------
-  stage ('Merge_To_Test'){
+  stage ('Push_branch_Test'){
       echo "Merge To Test"
-      sh('git push origin test')
+      sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@pruebas.git test')
   }
 
 }
