@@ -28,10 +28,9 @@ node{
       echo "Merge To Test"
       sh('git status')
       sh('git branch -av')
-      sh('git merge  HEAD')
-      sh("git checkout  test")
+      sh("git checkout  ${BRANCH_NAME}")
       sh('git branch -av')
-      sh("git merge  ${BRANCH_NAME}")
+      sh("git merge  HEAD")
   }
 
   // -------------------------------
