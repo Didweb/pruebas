@@ -16,7 +16,7 @@ node{
   // -------------------------------
   stage ('Test'){
     echo "Test"
-    sh("git pull remotes/origin/${BRANCH_NAME}")
+    sh("git pull origin  ${BRANCH_NAME}")
     sh('git branch -av')
 
   }
