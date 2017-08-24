@@ -27,7 +27,6 @@ node{
   stage ('Merge_To_Test'){
       echo "Merge To Test"
       sh('git status')
-      sh('git checkout  test')
       sh('git branch -av')
       echo " Estas en --->> ${BRANCH_NAME}"
       sh('git merge  test')
