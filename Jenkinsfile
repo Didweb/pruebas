@@ -16,7 +16,8 @@ node{
   // -------------------------------
   stage ('Test'){
     echo "Test"
-    sh('cat index.php')
+
+    
 
   }
 
