@@ -27,6 +27,7 @@ node{
       echo "Merge To Test"
       sh('git status')
       sh('git checkout  test')
+      echo " Estas en --->> ${BRANCH_NAME}"
       sh('git merge  test')
   }
 
