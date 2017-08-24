@@ -17,8 +17,8 @@ node{
   stage ('Test'){
     echo "Test"
     git([url: 'https://github.com/Didweb/pruebas.git', branch: 'test'])
-    nameBranch = sh('git status')
-    echo nameBranch
+    sh('git status')
+    sh('git merge test')
   }
 
 
