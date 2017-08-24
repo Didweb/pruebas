@@ -39,7 +39,7 @@ node{
                   echo " rama = ${BRANCH_NAME} "
                }
                else {
-                  echo "Not in 'master' branch. Don't attempt publishing."
+                  echo "Not in 'master' branch. Don't attempt publishing. Estas en --->> ${BRANCH_NAME}"
                }
 
  }
