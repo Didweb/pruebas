@@ -19,7 +19,7 @@ node{
     echo "Test"
     sh('touch borrar.php  ')
     sh('ls -al')
-checkout push
+sh('git symbolic-ref HEAD')
 
 
   }
