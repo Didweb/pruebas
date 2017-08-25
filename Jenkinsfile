@@ -17,17 +17,8 @@ node{
   // -------------------------------
   stage ('Test'){
     echo "Test"
-
-    sshagent (credentials: ['d1c5134e-8909-41d1-b88c-5f626f3be72d']) {
-                     sh '''
-                        git git@github.com:Didweb/pruebas.git
-
-                        git config --global user.name "Eduardo Pinuaga"
-                        git config --global user.email info@did-web.com
-                        git commit -am 'Bumped version number [ci skip]'
-                        git push origin master
-                     '''
-                  }
+    sh('touch miarchivo.txt')
+    sh('git push -u origin test')
   }
 
 
