@@ -36,7 +36,7 @@ node{
   // -------------------------------
   stage ('Push_branch_Test'){
       echo "Merge To Test"
-      sh('git branch -v')
+      sh('git branch -av')
       sh('git add .')
       sh('git checkout origin/test ')
       sh('git merge  ${BRANCH_NAME}')
