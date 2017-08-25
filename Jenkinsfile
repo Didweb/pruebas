@@ -11,7 +11,7 @@ node{
     sh 'rm -rf *'
     checkout scm
     sh('git branch -av')
-    sh('composer install')
+    sh('composer update')
     sh('phpunit tests')
 
 
