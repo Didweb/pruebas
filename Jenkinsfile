@@ -16,7 +16,7 @@ node() {
 	stage('setup') {
 		sh "env | sort"
 		handleCheckout()
-		sh "git branch -vv"
+		sh ('git branch -av')
 	}
 
 	stage('test') {
