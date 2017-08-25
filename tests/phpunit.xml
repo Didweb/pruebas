@@ -1,0 +1,9 @@
+<phpunit bootstrap="phpunit-selenium-bootstrap.php"
+         backupGlobals="false"
+         colors="true"  >
+  <testsuites>
+    <testsuite name="GroupTest">
+      <directory>tests</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>
