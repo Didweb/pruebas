@@ -18,6 +18,7 @@ node{
   stage ('Test'){
     echo "Test"
     sh('touch borrar.php  ')
+    sh('ls -al')
 
 
   }
@@ -37,9 +38,6 @@ node{
   stage ('Push_branch_Test'){
       echo "Merge To Test"
 
-      sh('git checkout  fantasma')
-      sh('git checkout --track  fantasma origin/${BRANCH_NAME}')
-      sh('git branch -av')
       if (BRANCH_NAME == "master") {
                   echo " rama = ${BRANCH_NAME} "
                }
