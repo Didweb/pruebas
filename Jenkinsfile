@@ -36,7 +36,7 @@ node{
   // -------------------------------
   stage ('Push_branch_Test'){
       echo "Merge To Test"
-      sh('git push origin refs/heads/feature/*:refs/remotes/origin/feature/* ')
+      sh('git push origin --all ')
       if (BRANCH_NAME == "master") {
                   echo " rama = ${BRANCH_NAME} "
                }
