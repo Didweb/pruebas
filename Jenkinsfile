@@ -35,6 +35,7 @@ def handleCheckout = {
 
 node() {
 	stage('setup') {
+    checkout scm
 		sh "env | sort"
 		handleCheckout()
 		sh "git branch -vv"
