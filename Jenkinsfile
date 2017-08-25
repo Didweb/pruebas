@@ -36,10 +36,11 @@ node{
   // -------------------------------
   stage ('Push_branch_Test'){
       echo "Merge To Test"
+      sh('git remote add originSSH git@github.com:Didweb/pruebas.git')
       sh('git branch -av')
       sh('git checkout  fantasma')
       sh('git remote -v')
-      sh('git push origin fantasma')
+      sh('git push originSSH fantasma')
       if (BRANCH_NAME == "master") {
                   echo " rama = ${BRANCH_NAME} "
                }
