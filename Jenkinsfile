@@ -35,7 +35,8 @@ node{
     echo '---------------------------------------'
     echo '            Merge Test'
     echo '---------------------------------------'
-    sh('git merge origin remote.origin.test')
+    sh('git checkout origin/test')
+    sh('git merge ${BRANCH_NAME}')
 
   }
 
