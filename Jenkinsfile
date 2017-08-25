@@ -9,7 +9,13 @@ node{
     echo '             Build'
     echo '---------------------------------------'
     sh 'rm -rf *'
-    checkout scm
+    checkout([
+         $class: 'GitSCM',
+         branches: scm.branches,
+         extensions: scm.extensions + [[$class: 'LocalBranch'], [$class: 'WipeWorkspace']],
+         userRemoteConfigs: [[credentialsId: 'github', url: 'git@github.com:Didweb/pruebas.git']],
+         doGenerateSubmoduleConfigurations: false
+     ])
     sh('git branch -av')
     sh('composer update')
 
@@ -51,7 +57,7 @@ node{
     sh ('git branch -av')
     sh ('git remote -v')
 
-    sshagent(['githubPush']) {
+    sshagent(['github']) {
               sh "git push"
           }
 
