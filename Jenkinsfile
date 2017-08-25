@@ -49,7 +49,7 @@ node{
     echo '            Push to Test'
     echo '---------------------------------------'
     sh ('git branch -av')
-    sh('git push remotes/origin/test origin/test')
+    sh('git push origin origin/test')
 
   }
 
