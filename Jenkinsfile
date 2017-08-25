@@ -17,9 +17,7 @@ node{
   // -------------------------------
   stage ('Test'){
     echo "Test"
-    sh('touch borrar.php  ')
-    sh('ls -al')
-sh('git symbolic-ref HEAD')
+    sh('git branch -av')
   }
 
 
