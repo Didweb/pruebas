@@ -58,8 +58,8 @@ node{
     //    }
 
        withCredentials([usernamePassword(credentialsId: '29465d95-fb54-4b02-96e2-419565ccc90a',
-        usernameVariable: 'GIT_USERNAME',
-        passwordVariable: 'GIT_PASSWORD')]) {
+        usernameVariable: '${GIT_USERNAME}',
+        passwordVariable: '${GIT_PASSWORD}')]) {
          sh('git push origin origin/test')
        }
 
