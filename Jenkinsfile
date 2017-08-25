@@ -20,8 +20,6 @@ node{
     sh('touch borrar.php  ')
     sh('ls -al')
 sh('git symbolic-ref HEAD')
-
-
   }
 
 
