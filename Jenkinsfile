@@ -51,7 +51,7 @@ node{
     sh ('git branch -av')
     sh ('git remote -v')
 
-    sshagent(['Didweb']) {
+    sshagent(['github']) {
               sh "git push"
           }
 
