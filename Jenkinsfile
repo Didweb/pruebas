@@ -36,7 +36,7 @@ node{
     echo '            Merge Test'
     echo '---------------------------------------'
     sh('git checkout origin/test')
-    sh('git merge ${BRANCH_NAME}')
+    sh('git merge origin/${BRANCH_NAME}')
 
   }
 
