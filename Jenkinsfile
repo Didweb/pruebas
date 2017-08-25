@@ -20,6 +20,7 @@ node{
     sh('git branch -av')
     sh('git fetch origin  test')
     sh('git branch -av')
+    sh('git push origin  test')
   }
 
 
