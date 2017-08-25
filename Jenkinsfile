@@ -38,7 +38,7 @@ node{
       echo "Merge To Test"
 
       sh('git checkout  fantasma')
-      sh('git checkout --track -b fantasma origin/${BRANCH_NAME}')
+      sh('git checkout --track  fantasma origin/${BRANCH_NAME}')
       sh('git branch -av')
       if (BRANCH_NAME == "master") {
                   echo " rama = ${BRANCH_NAME} "
