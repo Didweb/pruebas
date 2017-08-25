@@ -50,10 +50,17 @@ node{
     echo '---------------------------------------'
     sh ('git branch -av')
     sh ('git remote -v')
-    //sh('git push origin origin/test')
-    checkout(['d1c5134e-8909-41d1-b88c-5f626f3be72d']){
-    sh('git push origin origin/test')
-    }
+
+
+    checkout([$class: 'GitSCM',
+          branches: [[name: '*/test']],
+          doGenerateSubmoduleConfigurations: false,
+          extensions: [[$class: 'CleanCheckout']],
+          submoduleCfg: [],
+          userRemoteConfigs: [[credentialsId: 'd1c5134e-8909-41d1-b88c-5f626f3be72d', url: 'https://github.com/Didweb/pruebas.git']]
+      ]){
+        sh('git push origin origin/test')
+      }
 
 
   }
