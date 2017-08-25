@@ -11,6 +11,7 @@ node{
     sh 'rm -rf *'
     checkout scm
     sh('git branch -av')
+    sh('phpunit tests')
 
 
 
