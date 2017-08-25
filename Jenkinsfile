@@ -8,6 +8,7 @@ node{
     echo 'Machen PULL'
     sh 'rm -rf *'
   //  checkout scm
+  
 
   }
 
