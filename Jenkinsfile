@@ -51,13 +51,9 @@ node{
     sh ('git branch -av')
     sh ('git remote -v')
 
-    stage('Checkout') {
-           git branch: 'test',
-           credentialsId: '29465d95-fb54-4b02-96e2-419565ccc90a',
-    usernameVariable: '${GIT_USERNAME}',
-    passwordVariable: '${GIT_PASSWORD}',
-           url: 'git@github.com:Didweb/pruebas.git'
-       }
+    sshagent(['GitHub']) {
+              sh "git push"
+          }
 
 
 
