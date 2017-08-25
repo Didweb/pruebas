@@ -51,10 +51,8 @@ node{
     sh ('git branch -av')
     sh ('git remote -v')
     //sh('git push origin origin/test')
-
-
     sshagent([jenkinsCredsId]){
-    sh('git push originSSH origin/test')
+    sh('git push origin origin/test')
     }
 
 
