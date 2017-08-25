@@ -15,7 +15,7 @@ def handleCheckout = {
 node() {
 	stage('setup') {
 		sh "env | sort"
-		handleCheckout()
+		//handleCheckout()
 		sh ('git branch -av')
 	}
 
