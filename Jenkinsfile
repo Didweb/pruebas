@@ -31,7 +31,7 @@ node{
   // -------------------------------
   stage ('Push_branch_Test'){
       echo "PUSH"
-      sh('git push origin  ${BRANCH_NAME}')
+      sh('git push origin  HEAD')
       if (BRANCH_NAME == "master") {
                   echo " rama = ${BRANCH_NAME} "
                }
