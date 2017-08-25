@@ -9,6 +9,7 @@ node{
     echo '             Machen PULL'
     echo '---------------------------------------'
     sh 'rm -rf *'
+    checkout scm
     sh('git branch -av')
 
 
