@@ -51,7 +51,11 @@ node{
     sh ('git branch -av')
     sh ('git remote -v')
     //sh('git push origin origin/test')
-    sh('git push origin origin/test:test')
+
+    withCredentials([file(credentialsId: 'd1c5134e-8909-41d1-b88c-5f626f3be72d')]) {
+    sh('git push origin origin/test')
+    }
+
 
   }
 
