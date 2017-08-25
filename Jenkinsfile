@@ -17,7 +17,7 @@ node{
   // -------------------------------
   stage ('Test'){
     echo "Test"
-
+    sh('touch borrar.php  ')
 
 
   }
