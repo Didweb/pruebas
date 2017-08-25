@@ -5,9 +5,10 @@ node{
   // ----- STAGE: 'Pull'
   // -------------------------------
   stage ('Pull'){
-    echo '*'*20
+    def espacios = '*'*20
+    echo ${espacios}
     echo 'Machen PULL'
-    echo '*'*20
+    echo ${espacios}
     sh 'rm -rf *'
     sh('git branch -av')
 
