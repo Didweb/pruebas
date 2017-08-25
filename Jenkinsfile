@@ -19,6 +19,7 @@ node{
     echo "Test"
     sh('git branch -av')
     sh('git fetch origin  test')
+    sh('git branch -av')
   }
 
 
