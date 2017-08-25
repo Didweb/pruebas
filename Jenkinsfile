@@ -37,11 +37,12 @@ node{
   stage ('Push_branch_Test'){
       echo "Merge To Test"
       sh('git add .')
+      sh('git commit')
       if (BRANCH_NAME == "master") {
                   echo " rama = ${BRANCH_NAME} "
                }
                else {
-                  echo "Not in 'master' branch. Don't attempt publishing. Estas en --->> ${BRANCH_NAME}"
+                  echo "Estas en --->> ${BRANCH_NAME}"
                }
 
  }
