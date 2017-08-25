@@ -7,7 +7,7 @@ node{
   stage ('Pull'){
     echo 'Machen PULL'
     sh 'rm -rf *'
-    checkout scm
+  //  checkout scm
 
   }
 
@@ -17,7 +17,7 @@ node{
   stage ('Test'){
     echo "Test"
 
-    
+
 
   }
 
