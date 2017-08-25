@@ -37,7 +37,8 @@ node{
   stage ('Push_branch_Test'){
       echo "Merge To Test"
       sh('git add .')
-      sh('git commit')
+      sh('git checkout test ')
+      sh('git merge  ${BRANCH_NAME}')
       if (BRANCH_NAME == "master") {
                   echo " rama = ${BRANCH_NAME} "
                }
