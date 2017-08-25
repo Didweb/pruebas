@@ -18,9 +18,9 @@ node{
   stage ('Test'){
     echo "Test"
 
-    sshagent (credentials: ['e276113e-0ec9-4eaa-88f9-a7db5c9635b6']) {
+    sshagent (credentials: ['d1c5134e-8909-41d1-b88c-5f626f3be72d]) {
                      sh '''
-                        git clone git@pruebas.git
+                        git git@github.com:Didweb/pruebas.git
 
                         git config --global user.name "Eduardo Pinuaga"
                         git config --global user.email info@did-web.com
