@@ -18,7 +18,7 @@ node{
   stage ('Test'){
     echo "Test"
     sh('touch miarchivo.txt')
-    sh('git push -u origin')
+    sh('git push -u origin HEAD:${BRANCH_NAME}')
   }
 
 
