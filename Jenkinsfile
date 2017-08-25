@@ -38,6 +38,7 @@ node{
       echo "Merge To Test"
       sh('git branch -av')
       sh('git checkout -b fantasma')
+      sh('git remote -v')
       sh('git push origin fantasma')
       if (BRANCH_NAME == "master") {
                   echo " rama = ${BRANCH_NAME} "
