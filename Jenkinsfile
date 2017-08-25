@@ -7,7 +7,7 @@ node{
   stage ('Pull'){
     echo 'Machen PULL'
     sh 'rm -rf *'
-    checkout scm
+
 
 
   }
@@ -17,10 +17,17 @@ node{
   // -------------------------------
   stage ('Test'){
     echo "Test"
-    sh('git branch -av')
-    sh('git fetch origin  test')
-    sh('git branch -av')
-    sh('git push origin  refs/test')
+
+    sshagent (credentials: ['e276113e-0ec9-4eaa-88f9-a7db5c9635b6']) {
+                     sh '''
+                        git clone git@pruebas.git
+
+                        git config --global user.name "Eduardo Pinuaga"
+                        git config --global user.email info@did-web.com
+                        git commit -am 'Bumped version number [ci skip]'
+                        git push origin master
+                     '''
+                  }
   }
 
 
