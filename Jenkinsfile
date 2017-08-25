@@ -38,7 +38,7 @@ node{
       echo "Merge To Test"
       sh('git branch -av')
       sh('git add .')
-      sh('git checkout origin/test ')
+      sh('git checkout remote/origin/test ')
       sh('git merge  ${BRANCH_NAME}')
       if (BRANCH_NAME == "master") {
                   echo " rama = ${BRANCH_NAME} "
