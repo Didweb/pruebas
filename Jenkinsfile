@@ -50,7 +50,8 @@ node{
     echo '---------------------------------------'
     sh ('git branch -av')
     sh ('git remote -v')
-    sh('git push origin origin/test')
+    //sh('git push origin origin/test')
+    sh('git push origin origin/test:test')
 
   }
 
