@@ -24,20 +24,14 @@ node{
   }
 
 
-  // -------------------------------
-  // ----- STAGE: 'Merge to Test'
-  // -------------------------------
-  stage ('Merge_To_Test'){
 
-
-  }
 
   // -------------------------------
   // ----- STAGE: 'Push'
   // -------------------------------
   stage ('Push_branch_Test'){
-      echo "Merge To Test"
-
+      echo "PUSH"
+      sh('git push origin  ${BRANCH_NAME}')
       if (BRANCH_NAME == "master") {
                   echo " rama = ${BRANCH_NAME} "
                }
