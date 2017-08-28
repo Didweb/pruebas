@@ -37,7 +37,7 @@ node{
     echo '---------------------------------------'
 
     sshagent (credentials: ['Didweb']) {
-      sh 'ssh -o StrictHostKeyChecking=no  uname -a'
+      //sh 'ssh -o StrictHostKeyChecking=no  uname -a'
     }
 
 
