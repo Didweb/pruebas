@@ -37,8 +37,8 @@ node{
     echo '---------------------------------------'
 
 
-        sh "scp src eduardo.pinuaga-linares@144.76.212.29:/web/"
-    
+        sh "scp -o 'StrictHostKeyChecking no' src eduardo.pinuaga-linares@144.76.212.29:/web/"
+
 
 
   }
