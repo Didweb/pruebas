@@ -40,7 +40,7 @@ node{
       //sh 'ssh -o StrictHostKeyChecking=no  uname -a'
       sh 'git checkout origin/test'
       sh 'git branch -av'
-      sh 'git merge ${BRANCH_NAME}'
+      sh 'git merge origin/${BRANCH_NAME}'
     }
 
 
