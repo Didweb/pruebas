@@ -41,6 +41,7 @@ node{
       sh 'git checkout origin/test'
       sh 'git branch -av'
       sh 'git merge origin/${BRANCH_NAME}'
+      sh 'git branch -av'
     }
 
 
