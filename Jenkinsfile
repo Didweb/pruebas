@@ -37,7 +37,12 @@ node{
     echo '---------------------------------------'
 
 
-        sh "scp -o 'StrictHostKeyChecking no' src eduardo.pinuaga-linares@144.76.212.29:/web/"
+    sshagent(['29465d95-fb54-4b02-96e2-419565ccc90a']) {
+     // Invoke the maven build without tests and deploy the artifacts
+
+     // Push the commit and the created tag
+     sh "git push origin test"
+   }
 
 
 
