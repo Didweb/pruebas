@@ -37,8 +37,10 @@ node{
     echo '---------------------------------------'
 
 
+    sshagent(['repository']) {
+        sh "scp src eduardo.pinuaga-linares@144.76.212.29:/web/"
+    }
 
-sh 'scp  . eduardo.pinuaga-linares@144.76.212.29:web'
 
   }
 
