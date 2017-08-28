@@ -37,13 +37,13 @@ node{
     echo '---------------------------------------'
 
 
-    sshagent (credentials: ['29465d95-fb54-4b02-96e2-419565ccc90a']) {
+    sshagent (credentials: ['8354ee29-3c98-4240-ab96-107691dd1120']) {
       //sh 'ssh -o StrictHostKeyChecking=no  uname -a'
 
       sh 'git branch -av'
       sh 'git show-ref'
     //  sh 'git push -u git@github.com:Didweb/pruebas.git refs/remotes/origin/test'
-      sh 'git push  origin test'
+      sh 'git push  git@github.com:Didweb/pruebas.git refs/remotes/origin/test'
     }
 
 
