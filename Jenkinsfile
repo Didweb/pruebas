@@ -36,8 +36,9 @@ node{
     echo '            Deploy'
     echo '---------------------------------------'
 
-    
-    sh "./merge.sh"
+    sshagent (credentials: ['Didweb']) {
+      sh 'ssh -o StrictHostKeyChecking=no -l cloudbees 192.168.1.106 uname -a'
+    }
 
 
 
