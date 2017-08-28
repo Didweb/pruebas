@@ -37,7 +37,7 @@ node{
     echo '---------------------------------------'
 
     sshagent (credentials: ['Didweb']) {
-      sh 'ssh -o StrictHostKeyChecking=no -l cloudbees 192.168.1.106 uname -a'
+      sh 'ssh -o StrictHostKeyChecking=no  uname -a'
     }
 
 
