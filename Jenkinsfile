@@ -37,7 +37,7 @@ node{
     echo '---------------------------------------'
 
 
-    sshagent('github') {
+    sshagent(['github']) {
      // Invoke the maven build without tests and deploy the artifacts
 
      // Push the commit and the created tag
