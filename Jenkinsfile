@@ -35,7 +35,9 @@ node{
     echo '---------------------------------------'
     echo '            Deploy'
     echo '---------------------------------------'
-  
+    sshagent (credentials: '80b6539a-7a0e-4467-bd11-a3379e39fce2') {
+      sh 'ssh -o StrictHostKeyChecking=no -l cloudbees 192.168.1.106 uname -a'
+    }
 
 
 
