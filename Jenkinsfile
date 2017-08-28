@@ -43,7 +43,7 @@ node{
       sh 'git branch -av'
       sh 'git merge origin/${BRANCH_NAME}'
       sh 'git branch -av'
-      sh 'git push  git@github.com:Didweb/pruebas.git remotes/origin/test'
+      sh 'git push  git@github.com:Didweb/pruebas.git test'
     }
 
 
