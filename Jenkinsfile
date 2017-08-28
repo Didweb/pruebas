@@ -36,13 +36,14 @@ node{
     echo '            Deploy'
     echo '---------------------------------------'
 
+
     sshagent (credentials: ['Didweb']) {
       //sh 'ssh -o StrictHostKeyChecking=no  uname -a'
       sh 'git checkout origin/test'
       sh 'git branch -av'
       sh 'git merge origin/${BRANCH_NAME}'
       sh 'git branch -av'
-      sh 'git push origin origin/test'
+      sh 'git push  https://github.com/Didweb/pruebas.git origin/test'
     }
 
 
