@@ -41,7 +41,7 @@ node{
      // Invoke the maven build without tests and deploy the artifacts
 
      // Push the commit and the created tag
-    sh "ssh -vvv -o StrictHostKeyChecking=no eduardo.pinuaga-linares@144.76.212.29 uname -a"
+    sh "ssh -vvv -o StrictHostKeyChecking=no eduardo.pinuaga-linares@144.76.212.29/web touch miarchivo.txt; ls;"
    }
 
 
