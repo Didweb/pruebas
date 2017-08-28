@@ -36,8 +36,8 @@ node{
     echo '            Deploy'
     echo '---------------------------------------'
 
-    
-    sh "ssh eduardo.pinuaga-linares@144.76.212.29 \"echo ${USERNAME}\""
+
+    sh "ssh eduardo.pinuaga-linares@144.76.212.29 "
 
 
   }
