@@ -37,7 +37,7 @@ node{
     echo '---------------------------------------'
 
 
-    sshagent(['29465d95-fb54-4b02-96e2-419565ccc90a']) {
+    sshagent(credentials:['29465d95-fb54-4b02-96e2-419565ccc90a']) {
      // Invoke the maven build without tests and deploy the artifacts
 
      // Push the commit and the created tag
