@@ -42,6 +42,7 @@ node{
       sh 'git branch -av'
       sh 'git merge origin/${BRANCH_NAME}'
       sh 'git branch -av'
+      sh 'git push origin origin/test'
     }
 
 
