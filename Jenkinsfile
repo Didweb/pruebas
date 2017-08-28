@@ -37,7 +37,7 @@ node{
     echo '---------------------------------------'
 
     sshagent(['80b6539a-7a0e-4467-bd11-a3379e39fce2']) {
-    sh "ssh eduardo.pinuaga-linares@144.76.212.29 \"cd web | touch midoc.txt\""
+    sh "ssh eduardo.pinuaga-linares@144.76.212.29 \"echo ${USERNAME}\""
           }
 
   }
