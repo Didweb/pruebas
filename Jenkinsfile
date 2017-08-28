@@ -9,13 +9,7 @@ node{
     echo '             Build'
     echo '---------------------------------------'
     sh 'rm -rf *'
-    checkout([
-         $class: 'GitSCM',
-         branches: scm.branches,
-         extensions: scm.extensions + [[$class: 'LocalBranch'], [$class: 'WipeWorkspace']],
-         userRemoteConfigs: [[credentialsId: 'github', url: 'git@github.com:Didweb/pruebas.git']],
-         doGenerateSubmoduleConfigurations: false
-     ])
+    checkout scm
     sh('git branch -av')
     sh('composer update')
 
@@ -35,34 +29,17 @@ node{
 
 
   // -------------------------------
-  // ----- STAGE: 'Merge Test'
+  // ----- STAGE: 'Deploy'
   // -------------------------------
-  stage ('Merge Test'){
+  stage ('Deploy'){
     echo '---------------------------------------'
-    echo '            Merge Test'
+    echo '            Deploy'
     echo '---------------------------------------'
-    sh('git checkout origin/test')
-    sh('git merge origin/${BRANCH_NAME}')
+
 
   }
 
 
-  // -------------------------------
-  // ----- STAGE: 'Push to test'
-  // -------------------------------
-  stage ('Push to Test'){
-    echo '---------------------------------------'
-    echo '            Push to Test'
-    echo '---------------------------------------'
-    sh ('git branch -av')
-    sh ('git remote -v')
 
-    sshagent(['github']) {
-              sh "git push"
-          }
-
-
-
-  }
 
 }
