@@ -41,7 +41,8 @@ node{
       //sh 'ssh -o StrictHostKeyChecking=no  uname -a'
 
       sh 'git branch -av'
-      sh 'git push -u git@github.com:Didweb/pruebas.git test'
+      sh 'git show-ref'
+    //  sh 'git push -u git@github.com:Didweb/pruebas.git test'
     }
 
 
