@@ -39,7 +39,7 @@ node{
     sshagent (credentials: ['Didweb']) {
       //sh 'ssh -o StrictHostKeyChecking=no  uname -a'
       sh 'git checkout origin/test'
-      sh 'git btranch -av'
+      sh 'git branch -av'
       sh 'git merge ${BRANCH_NAME}'
     }
 
