@@ -37,7 +37,7 @@ node{
     echo '---------------------------------------'
 
 
-sh 'ssh -p 22 ssh eduardo.pinuaga-linares@144.76.212.29 "ls; hostname;"'
+sh 'ssh  eduardo.pinuaga-linares@144.76.212.29 "ls; hostname;"'
 
 
   }
