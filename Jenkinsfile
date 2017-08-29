@@ -37,7 +37,8 @@ node{
     echo '---------------------------------------'
 
 
-    sshagent (credentials: ['29465d95-fb54-4b02-96e2-419565ccc90a']) {
+  //  sshagent (credentials: ['29465d95-fb54-4b02-96e2-419565ccc90a']) {
+      sshagent (credentials: ['Didweb']) {
       //sh 'ssh -o StrictHostKeyChecking=no  uname -a'
       sh 'git config --global user.email "info@did-web.com"'
       sh 'git config --global user.name "Eduardo Pinuaga"'
