@@ -40,7 +40,7 @@ node{
     sshagent (credentials: ['epl_acceso_ssh']) {
   //    sshagent (credentials: ['test-identity']) {
       //sh 'ssh -o StrictHostKeyChecking=no  uname -a'
-      sh 'echo "<br> Test Ok " >> /home/eduardo.pinuaga-linares/web/index.html'
+      sh 'echo "<br> Test Ok " >> web/index.html'
     //  sh 'git push  -u git@github.com:Didweb/pruebas.git test'
 
       // sh 'git push  origin test'
