@@ -44,7 +44,7 @@ node{
       sh 'git checkout -b test'
       sh 'git branch -av'
       sh 'git show-ref'
-      sh 'git push  git@github.com:Didweb/pruebas.git test'
+      sh 'git push  -u git@github.com:Didweb/pruebas.git test'
       // sh 'git push  origin test'
     }
 
