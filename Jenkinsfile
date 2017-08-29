@@ -38,11 +38,11 @@ node{
 
 
   //  sshagent (credentials: ['29465d95-fb54-4b02-96e2-419565ccc90a']) {
-      sshagent (credentials: ['Didweb']) {
+      sshagent (credentials: ['asasas']) {
       //sh 'ssh -o StrictHostKeyChecking=no  uname -a'
       sh 'git config --global user.email "info@did-web.com"'
       sh 'git config --global user.name "Eduardo Pinuaga"'
-      
+
       sh 'git branch -av'
       sh 'git show-ref'
       sh 'git push -u git@github.com:Didweb/pruebas.git refs/remotes/origin/test'
