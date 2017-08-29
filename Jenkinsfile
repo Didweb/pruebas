@@ -41,7 +41,7 @@ node{
   //    sshagent (credentials: ['test-identity']) {
       //sh 'ssh -o StrictHostKeyChecking=no  uname -a'
       sh 'touch miarchivoSHH.txt'
-      sh 'echo "<br> Test Ok " >> miarchivoSHH.txt ssh://eduardo.pinuaga-linares@144.76.212.29:22/web/index.html'
+      sh 'echo "<br> Test Ok " >> miarchivoSHH.txt '
 
 sh 'scp miarchivoSHH.txt >> eduardo.pinuaga-linares@144.76.212.29:22:/web'
 
