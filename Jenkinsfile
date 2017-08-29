@@ -37,15 +37,12 @@ node{
     echo '---------------------------------------'
     echo '            Deploy'
     echo '---------------------------------------'
-    sshagent (credentials: ['test-identity']) {
+    sshagent (credentials: ['80b6539a-7a0e-4467-bd11-a3379e39fce2']) {
   //    sshagent (credentials: ['test-identity']) {
       //sh 'ssh -o StrictHostKeyChecking=no  uname -a'
-      sh 'git remote add upstream git@github.com:Didweb/pruebas.git'
-      sh 'git checkout  test'
-      sh 'git branch -av'
-      sh 'git show-ref'
+      sh 'echo "<br> Test Ok " >> /home/eduardo.pinuaga-linares/web/index.html'
     //  sh 'git push  -u git@github.com:Didweb/pruebas.git test'
-      sh 'git push  upstream test'
+
       // sh 'git push  origin test'
     }
 
