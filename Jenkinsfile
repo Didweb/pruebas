@@ -37,7 +37,7 @@ node{
     echo '---------------------------------------'
     echo '            Deploy'
     echo '---------------------------------------'
-    sshagent (credentials: ['80b6539a-7a0e-4467-bd11-a3379e39fce2']) {
+    sshagent (credentials: ['epl_acceso_ssh']) {
   //    sshagent (credentials: ['test-identity']) {
       //sh 'ssh -o StrictHostKeyChecking=no  uname -a'
       sh 'echo "<br> Test Ok " >> /home/eduardo.pinuaga-linares/web/index.html'
