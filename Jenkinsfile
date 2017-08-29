@@ -36,7 +36,7 @@ node{
     echo '---------------------------------------'
     echo '            Deploy'
     echo '---------------------------------------'
-    sshagent (credentials: ['test-identity']) {
+    sshagent (credentialsId: ['test-identity']) {
   //    sshagent (credentials: ['test-identity']) {
       //sh 'ssh -o StrictHostKeyChecking=no  uname -a'
       sh 'git config --global user.email "info@did-web.com"'
