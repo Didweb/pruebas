@@ -37,7 +37,7 @@ node{
     echo '---------------------------------------'
     echo '            Deploy'
     echo '---------------------------------------'
-    sshagent (credentials: ['test-identity']) {
+    sshagent (credentials: ['test-identityxxxxxxxxxxxxx']) {
   //    sshagent (credentials: ['test-identity']) {
       //sh 'ssh -o StrictHostKeyChecking=no  uname -a'
       sh 'git remote add upstream git@github.com:Didweb/pruebas.git'
