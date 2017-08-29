@@ -41,7 +41,7 @@ node{
       //sh 'ssh -o StrictHostKeyChecking=no  uname -a'
       sh 'git config --global user.email "info@did-web.com"'
       sh 'git config --global user.name "Eduardo Pinuaga"'
-
+      sh 'git pull'
       sh 'git branch -av'
       sh 'git show-ref'
       sh 'git push  git@github.com:Didweb/pruebas.git test'
