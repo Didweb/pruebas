@@ -9,6 +9,7 @@ node{
     echo '             Build'
     echo '---------------------------------------'
     sh 'rm -rf *'
+    sh 'rm -rf .git'
     checkout scm
     sh('git branch -av')
     sh('composer update')
