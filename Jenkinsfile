@@ -43,7 +43,7 @@ node{
       sh 'touch miarchivoSHH.txt'
       sh 'echo "<br> Test Ok " >> miarchivoSHH.txt '
 
-sh 'scp miarchivoSHH.txt  eduardo.pinuaga-linares@144.76.212.29:home/eduardo.pinuaga-linares/web/'
+sh 'scp -B -o StrictHostKeyChecking=no  miarchivoSHH.txt  eduardo.pinuaga-linares@144.76.212.29:home/eduardo.pinuaga-linares/web/'
 
     //  sh 'git push  -u git@github.com:Didweb/pruebas.git test'
 
