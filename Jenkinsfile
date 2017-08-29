@@ -40,11 +40,11 @@ node{
     sshagent (credentials: ['epl_acceso_ssh']) {
   //    sshagent (credentials: ['test-identity']) {
       //sh 'ssh -o StrictHostKeyChecking=no  uname -a'
-      sh 'echo "<br> Test Ok " >> ssh://eduardo.pinuaga-linares@144.76.212.29:22/web/index.html'
-      sh 'uname -a'
-      sh 'cat /etc/*-release'
-      sh 'pwd'
-      sh 'ls'
+      sh 'touch miarchivoSHH.txt'
+      sh 'echo "<br> Test Ok " >> miarchivoSHH.txt ssh://eduardo.pinuaga-linares@144.76.212.29:22/web/index.html'
+
+sh 'scp miarchivoSHH.txt >> eduardo.pinuaga-linares@144.76.212.29:22:/web'
+
     //  sh 'git push  -u git@github.com:Didweb/pruebas.git test'
 
       // sh 'git push  origin test'
