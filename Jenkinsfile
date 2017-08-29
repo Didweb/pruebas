@@ -40,7 +40,7 @@ node{
     sshagent (credentials: ['test-identity']) {
   //    sshagent (credentials: ['test-identity']) {
       //sh 'ssh -o StrictHostKeyChecking=no  uname -a'
-      sh 'git remote add upstream https://github.com/Didweb/pruebas.git'
+      sh 'git remote add upstream git@github.com:Didweb/pruebas.git'
       sh 'git config --global user.email "info@did-web.com"'
       sh 'git config --global user.name "Eduardo Pinuaga"'
       sh 'git checkout -b test'
