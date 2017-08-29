@@ -37,13 +37,11 @@ node{
     echo '---------------------------------------'
     echo '            Deploy'
     echo '---------------------------------------'
-    sshagent (credentials: ['test-identityxxxxxxxxxxxxx']) {
+    sshagent (credentials: ['test-identity']) {
   //    sshagent (credentials: ['test-identity']) {
       //sh 'ssh -o StrictHostKeyChecking=no  uname -a'
       sh 'git remote add upstream git@github.com:Didweb/pruebas.git'
-      sh 'git config --global user.email "info@did-web.com"'
-      sh 'git config --global user.name "Eduardo Pinuaga"'
-      sh 'git checkout -b test'
+      sh 'git checkout  test'
       sh 'git branch -av'
       sh 'git show-ref'
     //  sh 'git push  -u git@github.com:Didweb/pruebas.git test'
