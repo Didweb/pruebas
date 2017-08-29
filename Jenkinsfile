@@ -42,6 +42,7 @@ node{
       //sh 'ssh -o StrictHostKeyChecking=no  uname -a'
       //sh 'echo "<br> Test Ok " >> web/index.html'
       sh 'uname -a'
+      sh 'cat /etc/*-release'
       sh 'pwd'
       sh 'ls'
     //  sh 'git push  -u git@github.com:Didweb/pruebas.git test'
