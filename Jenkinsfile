@@ -43,7 +43,7 @@ node{
 
       sh 'git branch -av'
       sh 'git show-ref'
-      sh 'git push origin refs/remotes/origin/test'
+      sh 'git push -u ssh://git@github.com:Didweb/pruebas.git refs/remotes/origin/test'
       // sh 'git push  origin test'
     }
 
