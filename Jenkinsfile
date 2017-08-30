@@ -1,5 +1,12 @@
 #!groovy
 
+
+/** STATE **/
+inputSHA = ""
+authorName = "none"
+authorEmail = "none"
+
+
 node{
   // -------------------------------
   // ----- STAGE: 'Build'
