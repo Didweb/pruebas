@@ -21,8 +21,6 @@ stages{
           checkout scm
           sh ('git branch test')
           sh('git branch -av')
-
-
       }
 
   }
@@ -50,6 +48,7 @@ stages{
                       Branch: ${BRANCH_NAME}
 
                       Check me: https://ci.elementsystems.de/job/${nameJob}/job/${BRANCH_NAME}/
+                      Log: https://ci.elementsystems.de/job/${nameJob}/job/${BRANCH_NAME}/${number}/console
                      """
                    }
                  }
