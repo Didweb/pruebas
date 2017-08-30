@@ -8,20 +8,18 @@ stages{
   // ----- STAGE: 'Build'
   // -------------------------------
   stage ('Build'){
-steps {
-    echo '---------------------------------------'
-    echo '             Build'
-    echo '---------------------------------------'
-    sh 'rm -rf *'
-    sh 'rm -rf .git'
-    checkout scm
-    sh ('git branch test')
-    sh('git branch -av')
-
-
-    authorName = sh(script: "git show -s --pretty=%an", returnStdout: true).trim()
-    authorEmail = sh(script: "git show -s --pretty=%ae", returnStdout: true).trim()
-}
+      steps {
+          echo '---------------------------------------'
+          echo '             Build'
+          echo '---------------------------------------'
+          sh 'rm -rf *'
+          sh 'rm -rf .git'
+          checkout scm
+          sh ('git branch test')
+          sh('git branch -av')
+          authorName = sh(script: "git show -s --pretty=%an", returnStdout: true).trim()
+          authorEmail = sh(script: "git show -s --pretty=%ae", returnStdout: true).trim()
+      }
   }
 
   // -------------------------------
@@ -32,9 +30,8 @@ steps {
     echo '---------------------------------------'
     echo '             Unit Test'
     echo '---------------------------------------'
-
     sh('composer update')
-}
+    }
 
         steps {
                 sh('phpunit tests')
