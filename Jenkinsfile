@@ -30,9 +30,18 @@ node{
     echo '---------------------------------------'
     echo '             Unit Test'
     echo '---------------------------------------'
-    sh('composer update')
-    sh('phpunit tests')
-    error("Build failed because of this and that..")
+sh('composer update')
+    try {
+      sh('phpunit tests')
+    } catch(err) {
+      err("Build failed because of this and that..")
+    } finally {
+    
+    }
+
+
+
+
   }
 
 
