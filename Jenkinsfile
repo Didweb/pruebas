@@ -32,15 +32,18 @@ stages{
   // -------------------------------
   stage ('Unit Test'){
     steps {
-    echo '---------------------------------------'
-    echo '             Unit Test'
-    echo '---------------------------------------'
-    sh('composer update')
+      parallel("FIRST":{
+        echo '---------------------------------------'
+        echo '             Unit Test'
+        echo '---------------------------------------'
+        sh('composer update')
+      },
+      "SECOND":{
+          sh('phpunit tests')
+      }
+
     }
 
-        steps {
-                sh('phpunit tests')
-                 }
                  post {
                    failure {
                      mail to:"${authorEmail}", subject:"ERROR: ${currentBuild.fullDisplayName}",
@@ -57,36 +60,36 @@ stages{
 
   }
 
-  // -------------------------------
-  // ----- STAGE: 'Deploy'
-  // -------------------------------
-  stage ('Push to Branch Test'){
-    steps {
-    echo '---------------------------------------'
-    echo '            Push to Branch Test'
-    echo '---------------------------------------'
+      // -------------------------------
+      // ----- STAGE: 'Deploy'
+      // -------------------------------
+      stage ('Push to Branch Test'){
+        steps {
+        echo '---------------------------------------'
+        echo '            Push to Branch Test'
+        echo '---------------------------------------'
 
 
 
-    git branch: '${BRANCH_NAME}', credentialsId: 'test-identity', url: 'https://github.com/Didweb/pruebas.git'
+        git branch: '${BRANCH_NAME}', credentialsId: 'test-identity', url: 'https://github.com/Didweb/pruebas.git'
 
 
-    sh ('git branch -av')
-    sh ('git checkout  test')
-    sh ('git merge  ${BRANCH_NAME}')
-    sh ('git branch -av')
+        sh ('git branch -av')
+        sh ('git checkout  test')
+        sh ('git merge  ${BRANCH_NAME}')
+        sh ('git branch -av')
 
-    withCredentials([usernamePassword(
-      credentialsId: '29465d95-fb54-4b02-96e2-419565ccc90a',
-      usernameVariable: 'USERNAME',
-      passwordVariable: 'PASSWORD')]) {
+        withCredentials([usernamePassword(
+          credentialsId: '29465d95-fb54-4b02-96e2-419565ccc90a',
+          usernameVariable: 'USERNAME',
+          passwordVariable: 'PASSWORD')]) {
 
-      sh ('git push https://${USERNAME}:${PASSWORD}@github.com/Didweb/pruebas.git test')
+          sh ('git push https://${USERNAME}:${PASSWORD}@github.com/Didweb/pruebas.git test')
+        }
+
+
+      }
     }
-
-
   }
-}
-}
 
 } // pipeline
