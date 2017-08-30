@@ -101,9 +101,15 @@ stages{
         }
         post{
           success {
-                  mail to:"${managerEmail}", subject:"OK: ${currentBuild.fullDisplayName}",
-                  body: """OK,  Success .
+                  mail to:"${managerEmail}", subject:"OK Marge to test: ${currentBuild.fullDisplayName}",
+                  body: """OK,  Success.
 
+                  Author Commit: ${authorName}
+                  Build: ${currentBuild.fullDisplayName}
+                  Branch: ${BRANCH_NAME}
+
+                  Check me: https://ci.elementsystems.de/job/${nameJob}/job/${BRANCH_NAME}/
+                  Log: https://ci.elementsystems.de/job/${nameJob}/job/${BRANCH_NAME}/${number}/console
 
                   """
 
