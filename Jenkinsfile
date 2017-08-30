@@ -60,7 +60,7 @@ git branch: '${BRANCH_NAME}', credentialsId: 'test-identity', url: 'https://gith
     sh ('git merge  ${BRANCH_NAME}')
     sh ('git branch -av')
 
-    withCredentials([usernamePassword(credentialsId: 'test-identity', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+    withCredentials([usernamePassword(credentialsId: '29465d95-fb54-4b02-96e2-419565ccc90a', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
       // available as an env variable, but will be masked if you try to print it out any which way
       sh 'echo $PASSWORD'
       // also available as a Groovy variable—note double quotes for string interpolation
