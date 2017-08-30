@@ -106,7 +106,7 @@ stages{
         }
         post{
           success {
-                  mail to:"${managerEmail}", subject:"OK Marge to test: ${currentBuild.fullDisplayName}",
+                  mail to:"${managerEmail}", subject:"Marge to test [OK]: ${currentBuild.fullDisplayName}",
                   body: """OK,  Success.
 
                   Author Commit: ${authorName}
