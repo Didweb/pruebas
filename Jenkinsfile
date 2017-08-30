@@ -31,20 +31,32 @@ node{
     echo '             Unit Test'
     echo '---------------------------------------'
 sh('composer update')
+    // try {
+    //   sh('phpunit tests')
+    // } catch(err) {
+    //   mail to:"${authorEmail}", subject:"ERROR: ${currentBuild.fullDisplayName}",
+    //   body: """Opps,  Error .
+    //    Build: ${currentBuild.fullDisplayName}
+    //    Branch: ${BRANCH_NAME}
+    //
+    //    Check me: https://ci.elementsystems.de/job/${JOB_BASE_NAME}/job/${BRANCH_NAME}/
+    //   """
+    //
+    // }
+
     try {
-      sh('phpunit tests')
-    } catch(err) {
-      mail to:"${authorEmail}", subject:"ERROR: ${currentBuild.fullDisplayName}",
-      body: """Opps,  Error .
-       Build: ${currentBuild.fullDisplayName}
-       Branch: ${BRANCH_NAME}
+          sh('phpunit tests')
+        } catch (err) {
+            echo "Caught: ${err}"
+            currentBuild.result = 'FAILURE'
+        }
+        mail to:"${authorEmail}", subject:"ERROR: ${currentBuild.fullDisplayName}",
+        body: """Opps,  Error .
+         Build: ${currentBuild.fullDisplayName}
+         Branch: ${BRANCH_NAME}
 
-       Check me: https://ci.elementsystems.de/job/${JOB_BASE_NAME}/job/${BRANCH_NAME}/
-      """
-      currentBuild.result = 'FAILURE'
-    }
-
-
+         Check me: https://ci.elementsystems.de/job/${JOB_BASE_NAME}/job/${BRANCH_NAME}/
+        """
 
 
   }
