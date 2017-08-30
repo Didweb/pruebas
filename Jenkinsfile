@@ -15,7 +15,7 @@ stages{
   // -------------------------------
   stage ('Build'){
       steps {
-        if(BRANCH_NAME != 'test') {
+        if(env.BRANCH_NAME != 'test') {
           echo '---------------------------------------'
           echo '             Build'
           echo '---------------------------------------'
@@ -24,7 +24,7 @@ stages{
           checkout scm
           sh ('git branch test')
           sh('git branch -av')
-          }
+        } else {}
       }
 
   }
@@ -34,7 +34,7 @@ stages{
   // -------------------------------
   stage ('Unit Test'){
     steps {
-      
+
       parallel("Composer":{
           echo '---------------------------------------'
           echo '             Composer und Unit Test'
