@@ -2,7 +2,7 @@
 
 
 /** STATE **/
-inputSHA = ""
+
 authorName = "none"
 authorEmail = "none"
 
@@ -23,9 +23,11 @@ node{
     sh('composer update')
 
     authorName=sh ('git show -s --pretty=%an')
+    authorEmail=sh ('git show -s --pretty=%ae')
+
     sh ('************************************')
     sh('*** authorEmail: ${authorName}')
-    //sh('*** authorEmail: ${authorEmail}')
+    sh('*** authorEmail: ${authorEmail}')
     sh ('************************************')
   }
 
