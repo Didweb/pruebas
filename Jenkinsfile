@@ -54,7 +54,7 @@ node{
     //       // sh 'git push  origin test'
     //     }
 
-    git branch: '*/*', credentialsId: 'test-identity', url: 'https://github.com/Didweb/pruebas.git'
+    git branch: '${BRANCH_NAME}', credentialsId: 'test-identity', url: 'https://github.com/Didweb/pruebas.git'
     sh ('git branch -av')
 
 
