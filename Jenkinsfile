@@ -36,9 +36,10 @@ stages{
           echo '---------------------------------------'
           sh('pwd')
           sh('ls')
-          sh('composer update')
+
           },
           "PhpUnit":{
+            sh('composer update')
               sh('phpunit tests')
               })
           }
