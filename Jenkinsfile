@@ -40,7 +40,7 @@ stages{
       },
       "SECOND":{
           sh('phpunit tests')
-      }
+          })
 
     }
 
