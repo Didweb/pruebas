@@ -30,26 +30,13 @@ node{
     echo '---------------------------------------'
     echo '             Unit Test'
     echo '---------------------------------------'
-sh('composer update')
-    // try {
-    //   sh('phpunit tests')
-    // } catch(err) {
-    //   mail to:"${authorEmail}", subject:"ERROR: ${currentBuild.fullDisplayName}",
-    //   body: """Opps,  Error .
-    //    Build: ${currentBuild.fullDisplayName}
-    //    Branch: ${BRANCH_NAME}
-    //
-    //    Check me: https://ci.elementsystems.de/job/${JOB_BASE_NAME}/job/${BRANCH_NAME}/
-    //   """
-    //
-    // }
+
+    sh('composer update')
 
     try {
           sh('phpunit tests')
         } catch (err) {
-            echo "Caught: ${err}"
-            currentBuild.result = 'FAILURE'
-
+          
         mail to:"${authorEmail}", subject:"ERROR: ${currentBuild.fullDisplayName}",
         body: """Opps,  Error .
          Build: ${currentBuild.fullDisplayName}
@@ -57,8 +44,6 @@ sh('composer update')
 
          Check me: https://ci.elementsystems.de/job/${nameJob}/job/${BRANCH_NAME}/
         """
-
-
     }
   }
 
@@ -91,24 +76,4 @@ sh('composer update')
 
   }
 
-}
-
-
-post {
-    always {
-        echo 'This will always run'
-    }
-    success {
-        echo 'This will run only if successful'
-    }
-    failure {
-        echo 'This will run only if failed'
-    }
-    unstable {
-        echo 'This will run only if the run was marked as unstable'
-    }
-    changed {
-        echo 'This will run only if the state of the Pipeline has changed'
-        echo 'For example, if the Pipeline was previously failing but is now successful'
-    }
 }
