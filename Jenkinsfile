@@ -33,10 +33,9 @@ node{
 
     sh('composer update')
 
-    try {
-          sh('phpunit tests')
-        } catch (err) {
-          
+        sh('phpunit tests')
+
+
         mail to:"${authorEmail}", subject:"ERROR: ${currentBuild.fullDisplayName}",
         body: """Opps,  Error .
          Build: ${currentBuild.fullDisplayName}
@@ -44,7 +43,7 @@ node{
 
          Check me: https://ci.elementsystems.de/job/${nameJob}/job/${BRANCH_NAME}/
         """
-    }
+
   }
 
   // -------------------------------
