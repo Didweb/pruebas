@@ -2,11 +2,18 @@
 
 pipeline {
     agent any
+    nameJob = "testPipeline"
     stages {
-        stage('Test') {
-            steps {
-                sh 'echo "Fail!"; exit 1'
-            }
+        stage('Build') {
+          sh 'rm -rf *'
+          sh 'rm -rf .git'
+          checkout scm
+          sh ('git branch test')
+          sh('git branch -av')
+
+
+          authorName = sh(script: "git show -s --pretty=%an", returnStdout: true).trim()
+          authorEmail = sh(script: "git show -s --pretty=%ae", returnStdout: true).trim()
         }
     }
     post {
