@@ -32,8 +32,10 @@ stages{
     steps {
       parallel("Composer":{
           echo '---------------------------------------'
-          echo '             Unit Test'
+          echo '             Composer und Unit Test'
           echo '---------------------------------------'
+          sh('pwd')
+          sh('ls')
           sh('composer update')
           },
           "PhpUnit":{
