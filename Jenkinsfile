@@ -39,7 +39,7 @@ sh('composer update')
        Build: ${currentBuild.fullDisplayName}
        Branch: ${BRANCH_NAME}
 
-       Check me: https://ci.elementsystems.de/job/${WORKSPACE}/job/${BRANCH_NAME}/
+       Check me: https://ci.elementsystems.de/job/${env.WORKSPACE}/job/${BRANCH_NAME}/
       """
       currentBuild.result = 'FAILURE'
     }
