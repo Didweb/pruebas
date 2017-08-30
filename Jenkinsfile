@@ -1,10 +1,6 @@
 #!groovy
 
 
-/** STATE **/
-
-authorName = "none"
-authorEmail = "none"
 
 
 node{
@@ -22,11 +18,11 @@ node{
     sh('git branch -av')
 
 
-    authorName=sh ('git show -s --pretty=%an')
-    authorEmail=sh ('git show -s --pretty=%ae')
+    def authorName = sh ('git show -s --pretty=%an')
+    def authorEmail = sh ('git show -s --pretty=%ae')
 
     sh ('echo "************************************"')
-    sh("echo '*** authorEmail: ${authorName}' ")
+    sh("echo '*** authorName: ${authorName}' ")
     sh("echo '*** authorEmail: ${authorEmail}' ")
     sh ('echo "************************************"')
   }
