@@ -2,7 +2,7 @@
 
 pipeline {
     agent any
-    nameJob = "testPipeline"
+    def nameJob = "testPipeline"
     stages {
         stage('Build') {
           steps {
@@ -13,8 +13,8 @@ pipeline {
             sh('git branch -av')
 
 
-            authorName = sh(script: "git show -s --pretty=%an", returnStdout: true).trim()
-            authorEmail = sh(script: "git show -s --pretty=%ae", returnStdout: true).trim()
+            def authorName = sh(script: "git show -s --pretty=%an", returnStdout: true).trim()
+            def authorEmail = sh(script: "git show -s --pretty=%ae", returnStdout: true).trim()
           }
         }
     }
