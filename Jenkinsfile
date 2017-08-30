@@ -60,8 +60,8 @@ git branch: '${BRANCH_NAME}', credentialsId: 'test-identity', url: 'https://gith
     sh ('git merge  ${BRANCH_NAME}')
     sh ('git branch -av')
 
-git push: 'test', credentialsId: 'test-identity', url: 'https://github.com/Didweb/pruebas.git'
-      //  sh ('git push git@github.com:Didweb/pruebas.git test')
+// git push: 'test', credentialsId: 'test-identity', url: 'https://github.com/Didweb/pruebas.git'
+        sh ('git push git@github.com:Didweb/pruebas.git test')
 
 
 
