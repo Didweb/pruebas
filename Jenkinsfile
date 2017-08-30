@@ -58,7 +58,7 @@ node{
     sh ('git branch -av')
     sh ('git checkout -b test')
     sh ('git branch -av')
-    sh ('git push origin test')
+    sh ('git push git@github.com:Didweb/pruebas.git test')
 
 
   }
