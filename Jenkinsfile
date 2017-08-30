@@ -20,7 +20,7 @@ node{
     checkout scm
     sh ('git branch test')
     sh('git branch -av')
-    sh('composer update')
+
 
     authorName=sh ('git show -s --pretty=%an')
     authorEmail=sh ('git show -s --pretty=%ae')
@@ -38,7 +38,7 @@ node{
     echo '---------------------------------------'
     echo '             Unit Test'
     echo '---------------------------------------'
-    sh 'pwd'
+    sh('composer update')
     sh('phpunit tests')
 
   }
