@@ -22,7 +22,7 @@ node{
     sh('git branch -av')
     sh('composer update')
 
-    authorName=$(git show -s --pretty=%an)
+    authorName=sh ('git show -s --pretty=%an')
     sh ('************************************')
     sh('*** authorEmail: ${authorName}')
     //sh('*** authorEmail: ${authorEmail}')
