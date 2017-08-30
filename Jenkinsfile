@@ -34,7 +34,7 @@ sh('composer update')
     try {
       sh('phpunit tests')
     } catch(err) {
-      mail to:"${authorEmail}", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Opps,  Error ."
+      mail to:"eduardo.pinuaga-linares@elementsystems.de", subject:"ERROR: ${currentBuild.fullDisplayName}", body: "Opps,  Error ."
     }
 
 
