@@ -11,6 +11,7 @@ node{
     sh 'rm -rf *'
     sh 'rm -rf .git'
     checkout scm
+    sh ('git branch testing')
     sh('git branch -av')
     sh('composer update')
 
@@ -40,7 +41,7 @@ node{
 
     git branch: '${BRANCH_NAME}', credentialsId: 'test-identity', url: 'https://github.com/Didweb/pruebas.git'
     sh ('git branch -av')
-    sh ('git checkout  test')
+    sh ('git checkout  testing')
     sh ('git merge  ${BRANCH_NAME}')
     sh ('git branch -av')
 
