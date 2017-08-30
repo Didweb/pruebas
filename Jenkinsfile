@@ -25,10 +25,10 @@ node{
     authorName=sh ('git show -s --pretty=%an')
     authorEmail=sh ('git show -s --pretty=%ae')
 
-    sh ('************************************')
-    sh('*** authorEmail: ${authorName}')
-    sh('*** authorEmail: ${authorEmail}')
-    sh ('************************************')
+    sh ('echo "************************************"')
+    sh('echo "*** authorEmail: ${authorName}"')
+    sh('echo "*** authorEmail: ${authorEmail}"')
+    sh ('echo "************************************"')
   }
 
   // -------------------------------
