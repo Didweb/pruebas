@@ -44,11 +44,14 @@ stages{
 
           },
           "PhpUnit":{
+            if(1==1){
               sh('composer update')
               sh('phpunit tests')
+            }
+
             })
 
-            }
+
           }
           post {
               failure {
