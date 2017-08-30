@@ -15,7 +15,12 @@ node{
     sh('git branch -av')
     sh('composer update')
 
-
+    authorName = sh(script: "git log -1 --format='%an' ${inputSHA}", returnStdout: true).trim()
+    authorEmail = sh(script: "git log -1 --format='%ae' ${inputSHA}", returnStdout: true).trim()
+    sh ('************************************')
+    sh('*** authorEmail: ${authorName}')
+    sh('*** authorEmail: ${authorEmail}')
+    sh ('************************************')
   }
 
   // -------------------------------
