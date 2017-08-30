@@ -124,7 +124,7 @@ stages{
 
                Check me: https://ci.elementsystems.de/job/${nameJob}/job/${BRANCH_NAME}/
                Log: https://ci.elementsystems.de/job/${nameJob}/job/${BRANCH_NAME}/${number}/console
-
+               """
             }
         }
       }
