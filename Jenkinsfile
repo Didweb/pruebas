@@ -36,11 +36,12 @@ sh('composer update')
     } catch(err) {
       mail to:"eduardo.pinuaga-linares@elementsystems.de", subject:"ERROR: ${currentBuild.fullDisplayName}",
       body: """Opps,  Error .
-      <br> Build: ${currentBuild}
-      <br> Branch: ${BRANCH_NAME}
-      
-      <br> Check me: https://ci.elementsystems.de/job/${currentBuild}/job/${BRANCH_NAME}/
+       Build: ${currentBuild.fullDisplayName}
+       Branch: ${BRANCH_NAME}
+
+       Check me: https://ci.elementsystems.de/job/${WORKSPACE}/job/${BRANCH_NAME}/
       """
+      currentBuild.result = 'FAILURE'
     }
 
 
