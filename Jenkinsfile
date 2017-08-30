@@ -59,7 +59,7 @@ node{
     sh ('git checkout -b test')
     sh ('git branch -av')
 
-    withCredentials([[$class: 'UsernamePasswordMultiBinding',
+    sshagent([[$class: 'UsernamePasswordMultiBinding',
                                 credentialsId: 'test-identity',
                                 passwordVariable: 'PASSWORD',
                                 usernameVariable: 'USERNAME']]) {
