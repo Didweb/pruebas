@@ -56,6 +56,8 @@ node{
 
     git branch: '${BRANCH_NAME}', credentialsId: 'test-identity', url: 'https://github.com/Didweb/pruebas.git'
     sh ('git branch -av')
+    sh ('git checkout -b test')
+    sh ('git branch -av')
 
 
   }
