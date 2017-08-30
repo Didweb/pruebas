@@ -3,6 +3,10 @@
 nameJob = "testPipeline"
 pipeline{
 agent any
+environment {
+  authorName = sh(script: "git show -s --pretty=%an", returnStdout: true).trim()
+  authorEmail = sh(script: "git show -s --pretty=%ae", returnStdout: true).trim()
+  }
 stages{
   // -------------------------------
   // ----- STAGE: 'Build'
@@ -20,10 +24,7 @@ stages{
 
 
       }
-      environment {
-        authorName = sh(script: "git show -s --pretty=%an", returnStdout: true).trim()
-        authorEmail = sh(script: "git show -s --pretty=%ae", returnStdout: true).trim()
-        }
+
   }
 
   // -------------------------------
