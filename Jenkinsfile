@@ -38,6 +38,7 @@ sh('composer update')
       body: """Opps,  Error .
       <br> Build: ${currentBuild}
       <br> Branch: ${BRANCH_NAME}
+      
       <br> Check me: https://ci.elementsystems.de/job/${currentBuild}/job/${BRANCH_NAME}/
       """
     }
