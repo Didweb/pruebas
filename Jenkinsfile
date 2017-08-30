@@ -58,7 +58,20 @@ node{
     sh ('git branch -av')
     sh ('git checkout -b test')
     sh ('git branch -av')
-    sh ('git push git@github.com:Didweb/pruebas.git test')
+
+    withCredentials([[$class: 'UsernamePasswordMultiBinding',
+                                credentialsId: 'test-identity',
+                                passwordVariable: 'PASSWORD',
+                                usernameVariable: 'USERNAME']]) {
+                            timeout(1) {
+                                sh """\
+                                    git push https://\${USERNAME}:\${PASSWORD}@${REPO} test
+                                    """.stripIndent()
+                            }
+                        }
+
+
+    //sh ('git push git@github.com:Didweb/pruebas.git test')
 
 
   }
