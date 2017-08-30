@@ -7,7 +7,7 @@ environment {
   authorName = sh(script: "git show -s --pretty=%an", returnStdout: true).trim()
   authorEmail = sh(script: "git show -s --pretty=%ae", returnStdout: true).trim()
   managerName = "Clemens"
-  managerEmail = "info@did-web.com"
+  managerEmail = "eduardo.pinuaga-linares@elementsystems.de"
   }
 stages{
   // -------------------------------
@@ -104,7 +104,7 @@ stages{
                   mail to:"${managerEmail}", subject:"OK: ${currentBuild.fullDisplayName}",
                   body: """OK,  Success .
 
-                
+
                   """
 
             }
