@@ -34,9 +34,7 @@ sh('composer update')
     try {
       sh('phpunit tests')
     } catch(err) {
-      err("Build failed because of this and that..")
-    } finally {
-    
+      mail to:"${authorEmail}", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Opps,  Error ."
     }
 
 
