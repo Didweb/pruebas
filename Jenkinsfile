@@ -2,7 +2,7 @@
 
 nameJob = "testPipeline"
 pipeline{
-
+agent any
 stages{
   // -------------------------------
   // ----- STAGE: 'Build'
