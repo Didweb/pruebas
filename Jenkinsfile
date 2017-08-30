@@ -44,12 +44,14 @@ stages{
 
           },
           "PhpUnit":{
-            if(env.BRANCH_NAME == 'test') {
-            } else {
-            sh('composer update')
+            if(BRANCH_NAME!='test'){
+              sh('composer update')
               sh('phpunit tests')
+            } else {}
+
+
             }
-            })
+            )
 
             }
           }
