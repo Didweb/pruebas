@@ -1,9 +1,9 @@
 #!groovy
 
 nameJob = "testPipeline"
+pipeline{
 
-
-node{
+stages{
   // -------------------------------
   // ----- STAGE: 'Build'
   // -------------------------------
@@ -83,3 +83,5 @@ node{
   }
 
 }
+
+} // pipeline
