@@ -34,7 +34,7 @@ stages{
   // -------------------------------
   stage ('Unit Test'){
     steps {
-if(env.BRANCH_NAME != 'test') {
+
       parallel("Composer":{
           echo '---------------------------------------'
           echo '             Composer und Unit Test'
@@ -44,9 +44,11 @@ if(env.BRANCH_NAME != 'test') {
 
           },
           "PhpUnit":{
+            if(env.BRANCH_NAME != 'test') {
             sh('composer update')
               sh('phpunit tests')
               })
+            }
           }
           post {
               failure {
@@ -73,7 +75,7 @@ if(env.BRANCH_NAME != 'test') {
                    }
 
                  }
-}
+
 
 
   }
