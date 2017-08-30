@@ -1,6 +1,6 @@
 #!groovy
 
-
+nameJob = "testPipeline"
 
 
 node{
@@ -55,7 +55,7 @@ sh('composer update')
          Build: ${currentBuild.fullDisplayName}
          Branch: ${BRANCH_NAME}
 
-         Check me: https://ci.elementsystems.de/job/${JOB_BASE_NAME}/job/${BRANCH_NAME}/
+         Check me: https://ci.elementsystems.de/job/${nameJob}/job/${BRANCH_NAME}/
         """
 
 
@@ -70,7 +70,11 @@ sh('composer update')
     echo '            Push to Branch Test'
     echo '---------------------------------------'
 
+
+
     git branch: '${BRANCH_NAME}', credentialsId: 'test-identity', url: 'https://github.com/Didweb/pruebas.git'
+
+
     sh ('git branch -av')
     sh ('git checkout  test')
     sh ('git merge  ${BRANCH_NAME}')
@@ -87,4 +91,24 @@ sh('composer update')
 
   }
 
+}
+
+
+post {
+    always {
+        echo 'This will always run'
+    }
+    success {
+        echo 'This will run only if successful'
+    }
+    failure {
+        echo 'This will run only if failed'
+    }
+    unstable {
+        echo 'This will run only if the run was marked as unstable'
+    }
+    changed {
+        echo 'This will run only if the state of the Pipeline has changed'
+        echo 'For example, if the Pipeline was previously failing but is now successful'
+    }
 }
