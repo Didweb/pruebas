@@ -8,7 +8,7 @@ class PrimerTest extends TestCase
 
     public function testresultIsTrue()
     {
-        $this->assertEquals(3, 2);
+        $this->assertEquals(2, 2);
     }
 
     public function testresultIsFalse()
