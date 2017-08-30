@@ -34,7 +34,7 @@ steps {
     echo '---------------------------------------'
 
     sh('composer update')
-},
+}
 
         steps {
                 sh('phpunit tests')
