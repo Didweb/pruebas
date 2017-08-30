@@ -6,6 +6,8 @@ agent any
 environment {
   authorName = sh(script: "git show -s --pretty=%an", returnStdout: true).trim()
   authorEmail = sh(script: "git show -s --pretty=%ae", returnStdout: true).trim()
+  managerName = "Clemens"
+  managerEmail = "info@did-web.com"
   }
 stages{
   // -------------------------------
@@ -53,7 +55,20 @@ stages{
                       Check me: https://ci.elementsystems.de/job/${nameJob}/job/${BRANCH_NAME}/
                       Log: https://ci.elementsystems.de/job/${nameJob}/job/${BRANCH_NAME}/${number}/console
                      """
+
+
+                     mail to:"${managerEmail}", subject:"ERROR: ${currentBuild.fullDisplayName}",
+                     body: """Opps,  Error .
+
+                      Author Commit: ${authorName}
+                      Build: ${currentBuild.fullDisplayName}
+                      Branch: ${BRANCH_NAME}
+
+                      Check me: https://ci.elementsystems.de/job/${nameJob}/job/${BRANCH_NAME}/
+                      Log: https://ci.elementsystems.de/job/${nameJob}/job/${BRANCH_NAME}/${number}/console
+                     """
                    }
+
                  }
 
 
@@ -83,6 +98,34 @@ stages{
             sh ('git push https://${USERNAME}:${PASSWORD}@github.com/Didweb/pruebas.git test')
           }
 
+        }
+        post{
+          success {
+                  mail to:"${managerEmail}", subject:"OK: ${currentBuild.fullDisplayName}",
+                  body: """OK,  Success .
+
+                   Author Commit: ${authorName}
+                   Build: ${currentBuild.fullDisplayName}
+                   Branch: ${BRANCH_NAME}
+
+                   Check me: https://ci.elementsystems.de/job/${nameJob}/job/${BRANCH_NAME}/
+                   Log: https://ci.elementsystems.de/job/${nameJob}/job/${BRANCH_NAME}/${number}/console
+                  """
+
+            }
+            failure {
+
+              mail to:"${managerEmail}", subject:"ERROR Marge to test: ${currentBuild.fullDisplayName}",
+              body: """Opps,  Error. Marge branch test
+
+               Author Commit: ${authorName}
+               Build: ${currentBuild.fullDisplayName}
+               Branch: ${BRANCH_NAME}
+
+               Check me: https://ci.elementsystems.de/job/${nameJob}/job/${BRANCH_NAME}/
+               Log: https://ci.elementsystems.de/job/${nameJob}/job/${BRANCH_NAME}/${number}/console
+
+            }
         }
       }
   }
