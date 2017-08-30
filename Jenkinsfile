@@ -33,16 +33,23 @@ node{
 
     sh('composer update')
 
-        sh('phpunit tests')
+
+        steps {
+                sh('phpunit tests')
+                 }
+                 post {
+                   failure {
+                     mail to:"${authorEmail}", subject:"ERROR: ${currentBuild.fullDisplayName}",
+                     body: """Opps,  Error .
+                      Build: ${currentBuild.fullDisplayName}
+                      Branch: ${BRANCH_NAME}
+
+                      Check me: https://ci.elementsystems.de/job/${nameJob}/job/${BRANCH_NAME}/
+                     """
+                   }
+                 }
 
 
-        mail to:"${authorEmail}", subject:"ERROR: ${currentBuild.fullDisplayName}",
-        body: """Opps,  Error .
-         Build: ${currentBuild.fullDisplayName}
-         Branch: ${BRANCH_NAME}
-
-         Check me: https://ci.elementsystems.de/job/${nameJob}/job/${BRANCH_NAME}/
-        """
 
   }
 
