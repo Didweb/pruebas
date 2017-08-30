@@ -44,14 +44,9 @@ stages{
 
           },
           "PhpUnit":{
-            if(BRANCH_NAME!='test'){
               sh('composer update')
               sh('phpunit tests')
-            } else {}
-
-
-            }
-            )
+            })
 
             }
           }
