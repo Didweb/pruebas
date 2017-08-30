@@ -65,10 +65,11 @@ git branch: '${BRANCH_NAME}', credentialsId: 'test-identity', url: 'https://gith
       sh 'echo $PASSWORD'
       // also available as a Groovy variable—note double quotes for string interpolation
       echo "$USERNAME"
+      sh ('git push https://${USERNAME}:${PASSWORD}@github.com/Didweb/pruebas.git test')
     }
 
 // git push: 'test', credentialsId: 'test-identity', url: 'https://github.com/Didweb/pruebas.git'
-        sh ('git push https://${USERNAME}:${PASSWORD}@github.com/Didweb/pruebas.git test')
+
 
 
 
