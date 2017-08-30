@@ -8,6 +8,7 @@ stages{
   // ----- STAGE: 'Build'
   // -------------------------------
   stage ('Build'){
+steps {
     echo '---------------------------------------'
     echo '             Build'
     echo '---------------------------------------'
@@ -20,19 +21,20 @@ stages{
 
     authorName = sh(script: "git show -s --pretty=%an", returnStdout: true).trim()
     authorEmail = sh(script: "git show -s --pretty=%ae", returnStdout: true).trim()
-
+}
   }
 
   // -------------------------------
   // ----- STAGE: 'Unit Test'
   // -------------------------------
   stage ('Unit Test'){
+    steps {
     echo '---------------------------------------'
     echo '             Unit Test'
     echo '---------------------------------------'
 
     sh('composer update')
-
+},
 
         steps {
                 sh('phpunit tests')
@@ -57,6 +59,7 @@ stages{
   // ----- STAGE: 'Deploy'
   // -------------------------------
   stage ('Push to Branch Test'){
+    steps {
     echo '---------------------------------------'
     echo '            Push to Branch Test'
     echo '---------------------------------------'
@@ -81,7 +84,7 @@ stages{
 
 
   }
-
+}
 }
 
 } // pipeline
