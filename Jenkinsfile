@@ -18,14 +18,9 @@ node{
     sh('git branch -av')
 
 
-    //def authorName = sh ('git show -s --pretty=%an')
-    def authorEmail = sh ('git show -s --pretty=%ae')
-authorName = sh(script: "git show -s --pretty=%an", returnStdout: true).trim()
-authorEmail = sh(script: "git show -s --pretty=%ae", returnStdout: true).trim()
-    sh ('echo "************************************"')
-    sh("echo '*** authorName: ${authorName}' ")
-    sh("echo '*** authorEmail: ${authorEmail}' ")
-    sh ('echo "************************************"')
+    authorName = sh(script: "git show -s --pretty=%an", returnStdout: true).trim()
+    authorEmail = sh(script: "git show -s --pretty=%ae", returnStdout: true).trim()
+
   }
 
   // -------------------------------
@@ -37,7 +32,7 @@ authorEmail = sh(script: "git show -s --pretty=%ae", returnStdout: true).trim()
     echo '---------------------------------------'
     sh('composer update')
     sh('phpunit tests')
-
+    error("Build failed because of this and that..")
   }
 
 
