@@ -58,6 +58,7 @@ node{
     sh ('git branch -av')
     sh ('git checkout -b test')
     sh ('git branch -av')
+    sh ('git push origin test')
 
 
   }
