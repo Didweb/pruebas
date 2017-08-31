@@ -107,7 +107,7 @@ stages{
         post{
           success {
                   mail to:"${managerEmail}", subject:"Marge to test [OK]: ${currentBuild.fullDisplayName}",
-                  body: """OK,  Success.
+                  body: """OK!  Success, Marge to branch test.
 
                   Author Commit: ${authorName}
                   Build: ${currentBuild.fullDisplayName}
@@ -121,7 +121,7 @@ stages{
             failure {
 
               mail to:"${managerEmail}", subject:"ERROR Marge to test: ${currentBuild.fullDisplayName}",
-              body: """Opps,  Error. Marge branch test
+              body: """Opps,  Error, Marge to branch test
 
                Author Commit: ${authorName}
                Build: ${currentBuild.fullDisplayName}
